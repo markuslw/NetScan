@@ -30,6 +30,15 @@ class Program
             long minRTT = RTTList.Min();
             long maxRTT = RTTList.Max();
             Console.WriteLine($"\nFrom {RTTList.Count} tries\n\tMax RTT: \t{maxRTT} ms\n\tAvg RTT: \t{avgRTT} ms\n\tMin RTT: \t{minRTT} ms");
+            RTTList.Sort();
+            Console.WriteLine($"Upper quartile RTT values: {RTTList[^1]} ms, {RTTList[^2]} ms, {RTTList[^3]} ms, {RTTList[^4]} ms, {RTTList[^5]} ms");
+            Console.WriteLine($"Lower quartile RTT values: {RTTList[0]} ms, {RTTList[1]} ms, {RTTList[2]} ms, {RTTList[3]} ms, {RTTList[4]} ms");
+            // All RTT values
+            Console.WriteLine("All RTT values: ");
+            foreach (long rtt in RTTList)
+            {
+                Console.Write(rtt + " ");
+            }
         }
         else
         {
